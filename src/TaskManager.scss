@@ -1,0 +1,29 @@
+/* src/App.scss */
+.taskManager {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.taskManager-input {
+  display: flex;
+  margin-bottom: 16px;
+
+  input {
+    flex: 1;
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+}
+
+

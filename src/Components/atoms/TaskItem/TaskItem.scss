@@ -1,0 +1,33 @@
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+
+    &.completed {
+      background-color: #e6f7ff;
+    }
+  
+    .complete-button {
+      margin-top: 8px;
+      cursor: pointer;
+    }
+
+    .task-text {
+      cursor: pointer;
+    }
+
+    .task-actions {
+      button {
+        margin-left: 8px;
+        cursor: pointer;
+      }
+    }
+
+    input {
+      flex: 1;
+      padding: 8px;
+    }
+  }
