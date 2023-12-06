@@ -100,6 +100,13 @@ const TaskManager: React.FC = () => {
       <div className="taskManager">
         <h1>Task Manager</h1>
         <div className="taskManager-input">
+        <button
+            className={`button-add  ${openTitle ? "open" : ""}`}
+            aria-label="Open Title"
+            onClick={openInput}
+          >
+            <Add />
+          </button>
           {openTitle && (
             <>
               <input
@@ -118,13 +125,7 @@ const TaskManager: React.FC = () => {
               </button>
             </>
           )}
-          <button
-            className={`button-add  ${openTitle ? "open" : ""}`}
-            aria-label="Open Title"
-            onClick={openInput}
-          >
-            <Add />
-          </button>
+          
         </div>
         <TaskList
           tasks={tasks}
