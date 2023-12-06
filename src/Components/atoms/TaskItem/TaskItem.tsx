@@ -1,6 +1,10 @@
-// src/TaskItem.tsx
-import React, { useState } from 'react';
-import './TaskItem.scss';
+import React, { useState } from "react";
+import "./TaskItem.scss";
+import { ReactComponent as Save } from "../../../Assets/Icons/save.svg";
+import { ReactComponent as Edit } from "../../../Assets/Icons/edit.svg";
+import { ReactComponent as Delete } from "../../../Assets/Icons/delete.svg";
+import { ReactComponent as Complete } from "../../../Assets/Icons/checkbox-checked.svg";
+import { ReactComponent as Incomplete } from "../../../Assets/Icons/checkbox-unchecked.svg";
 
 interface Task {
   id: string;
@@ -15,29 +19,38 @@ interface TaskItemProps {
   onDelete: () => void;
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onComplete, onDelete }) => {
+const TaskItem: React.FC<TaskItemProps> = ({
+  task,
+  onEdit,
+  onComplete,
+  onDelete,
+}) => {
   const [editing, setEditing] = useState(false);
   const [editedText, setEditedText] = useState(task.text);
 
   const handleEdit = () => {
-    if (editedText.trim() !== '') {
+    if (editedText.trim() !== "") {
       onEdit(editedText);
       setEditing(false);
     }
   };
 
   return (
-    <li className={`task-item ${task.completed ? 'completed' : ''}`}>
+    <li className={`task-item ${task.completed ? "completed" : ""}`}>
       {!editing ? (
         <>
+          <button className="complete-button" onClick={onComplete}>
+            {task.completed ? <Complete /> : <Incomplete />}
+          </button>
           <div onClick={onComplete} className="task-text">
             <strong>{task.text}</strong>
           </div>
           <div className="task-actions">
-            <button onClick={() => setEditing(true)}>Edit</button>
-            <button onClick={onDelete}>Delete</button>
-            <button className="complete-button" onClick={onComplete}>
-              Mark as {!task.completed ? 'Complete' : 'incomplete'}
+            <button className="edit-button" onClick={() => setEditing(true)}>
+              <Edit />
+            </button>
+            <button className="delete-button" onClick={onDelete}>
+              <Delete />
             </button>
           </div>
         </>
@@ -48,7 +61,9 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onComplete, onDelete 
             value={editedText}
             onChange={(e) => setEditedText(e.target.value)}
           />
-          <button onClick={handleEdit}>Save</button>
+          <button className="delete-button" onClick={handleEdit}>
+            <Save />
+          </button>
         </>
       )}
     </li>

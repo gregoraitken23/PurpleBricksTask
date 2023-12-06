@@ -1,33 +1,74 @@
 .task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 8px;
+
+  .delete-button:hover g {
+    fill: red;
+  }
+
+  SVG {
+    width: 20px;
+    height: 20px;
+    display: -webkit-flex; /* Safari */
     display: flex;
+    -webkit-align-items: center; /* Safari 7.0+ */
     align-items: center;
-    justify-content: space-between;
-    padding: 8px;
-    border: 1px solid #ddd;
-    margin-bottom: 8px;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
 
-    &.completed {
-      background-color: #e6f7ff;
-    }
-  
-    .complete-button {
-      margin-top: 8px;
-      cursor: pointer;
-    }
+  &.completed {
+    background-color: #7ebf84;
+    color: white;
+    text-decoration: line-through;
 
-    .task-text {
-      cursor: pointer;
+    g {
+      fill: white;
     }
 
     .task-actions {
-      button {
-        margin-left: 8px;
-        cursor: pointer;
+      .edit-button {
+        SVG {
+          path,
+          polygon {
+            stroke: white;
+          }
+        }
       }
     }
+  }
 
-    input {
-      flex: 1;
-      padding: 8px;
+  .complete-button {
+    cursor: pointer;
+
+    SVG {
+      width: 30px;
+      height: 30px;
     }
   }
+
+  .task-text {
+    cursor: pointer;
+    flex-grow: 1;
+  }
+
+  .task-actions {
+    button {
+      margin-left: 8px;
+      cursor: pointer;
+    }
+  }
+
+  input,
+  input:focus {
+    flex: 1;
+    padding: 8px;
+    border: 0;
+    font-size: 20px;
+    outline: none;
+  }
+}

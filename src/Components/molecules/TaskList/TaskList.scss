@@ -1,4 +1,11 @@
 .task-list {
   list-style-type: none;
   padding: 0;
+  li.task-item input {
+    max-width: 90% !important;
+  }
+  button {
+    background: none;
+    border: 0;
+  }
 }
