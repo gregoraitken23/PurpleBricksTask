@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import TaskList from "./Components/molecules/TaskList/TaskList";
+import TaskList from "../../molecules/TaskList/TaskList";
 import "./TaskManager.scss";
-import { ReactComponent as Add } from "../src/Assets/Icons/add.svg";
-import { ReactComponent as Commit } from "../src/Assets/Icons/commit.svg";
+import { ReactComponent as Commit } from "../../../../src/Assets/Icons/commit.svg";
 
 interface Task {
   /**
@@ -58,6 +57,7 @@ const TaskManager: React.FC = () => {
     };
     setTasks((prevTasks) => [...prevTasks, newTask]);
     setNewTaskText("");
+    setButtonActive(false);
   };
 
   const openInput = () => {
@@ -81,10 +81,11 @@ const TaskManager: React.FC = () => {
     );
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewTaskText(e.target.value);
-    // activate button on text change
-    setButtonActive(newTaskText.trim() !== "");
+    const inputText = e.target.value;
+    setNewTaskText(inputText);
+    setButtonActive(inputText.trim() !== ''); // Update buttonActive based on trimmed input text
   };
+  
   const completeTask = (taskId: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -98,20 +99,20 @@ const TaskManager: React.FC = () => {
   return (
     <div className="page">
       <div className="taskManager">
-        <h1>Task Manager</h1>
+        <h1>Get Sh*t Done</h1>
         <div className="taskManager-input">
         <button
             className={`button-add  ${openTitle ? "open" : ""}`}
             aria-label="Open Title"
             onClick={openInput}
           >
-            <Add />
+            <Commit /> {!openTitle ? <div>Add Task</div> : ""}
           </button>
           {openTitle && (
             <>
               <input
                 type="text"
-                placeholder="Add a new task here :)"
+                placeholder="Type a new task here..."
                 value={newTaskText}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
