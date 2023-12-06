@@ -99,7 +99,7 @@ const TaskManager: React.FC = () => {
   return (
     <div className="page">
       <div className="taskManager">
-        <h1>Get Sh*t Done</h1>
+        <h1>Get Stuff Done</h1>
         <div className="taskManager-input">
         <button
             className={`button-add  ${openTitle ? "open" : ""}`}
