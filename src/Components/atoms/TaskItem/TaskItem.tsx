@@ -7,6 +7,9 @@ import { ReactComponent as Complete } from "../../../Assets/Icons/checkbox-check
 import { ReactComponent as Incomplete } from "../../../Assets/Icons/checkbox-unchecked.svg";
 
 interface Task {
+  /*
+  id of the task- set to timestamp for individuality
+  */
   id: string;
   text: string;
   completed: boolean;

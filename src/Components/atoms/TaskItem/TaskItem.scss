@@ -1,13 +1,15 @@
+@import '../../../Variables/colours.scss';
+
 .task-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid $lightGrey;
   margin-bottom: 8px;
 
   .delete-button:hover g {
-    fill: red;
+    fill: $primaryRed;
   }
 
   SVG {
@@ -23,12 +25,12 @@
   }
 
   &.completed {
-    background-color: #7ebf84;
-    color: white;
+    background-color: $lightGreen;
+    color: $white;
     text-decoration: line-through;
 
     g {
-      fill: white;
+      fill: $white;
     }
 
     .task-actions {
@@ -36,7 +38,7 @@
         SVG {
           path,
           polygon {
-            stroke: white;
+            stroke: $white;
           }
         }
       }
