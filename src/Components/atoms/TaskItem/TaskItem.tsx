@@ -11,7 +11,13 @@ interface Task {
   id of the task- set to timestamp for individuality
   */
   id: string;
+  /*
+  title of the task
+  */
   text: string;
+  /*
+  is task completed boolean
+  */
   completed: boolean;
 }
 
@@ -22,12 +28,12 @@ interface TaskItemProps {
   onDelete: () => void;
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({
+const TaskItem = ({
   task,
   onEdit,
   onComplete,
   onDelete,
-}) => {
+}:TaskItemProps) => {
   const [editing, setEditing] = useState(false);
   const [editedText, setEditedText] = useState(task.text);
 
