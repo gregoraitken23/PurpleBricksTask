@@ -28,12 +28,7 @@ interface TaskItemProps {
   onDelete: () => void;
 }
 
-const TaskItem = ({
-  task,
-  onEdit,
-  onComplete,
-  onDelete,
-}:TaskItemProps) => {
+const TaskItem = ({ task, onEdit, onComplete, onDelete }: TaskItemProps) => {
   const [editing, setEditing] = useState(false);
   const [editedText, setEditedText] = useState(task.text);
 

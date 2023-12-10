@@ -3,17 +3,14 @@ Interfaces:
 Task: Describes the structure of a task with properties id, text, and completed.
 TaskListProps: Specifies the props expected by the TaskList component, including an array of tasks (tasks), and three callback functions (onEdit, onComplete, onDelete).
 
-
 in the absence of a wiki.
- this file is a great substitute for component information. documentation 
-
+this file is a great substitute for component information. documentation
 
 Functional Component:
 
 TaskList: Accepts the TaskListProps as props.
 Renders an unordered list (ul) with a class of "task-list".
 Maps through the array of tasks and renders a TaskItem component for each task.
-
 
 Mapped TaskItem Components:
 

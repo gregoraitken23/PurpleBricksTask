@@ -1,4 +1,4 @@
-@import '../../../Variables/colours.scss';
+@import "../../../Variables/colours.scss";
 
 .page {
   background: $skyBlue;
@@ -45,7 +45,7 @@
       &.button-add {
         div {
           margin-top: 2px;
-      }
+        }
         svg {
           transition: all 0.5s ease-in-out;
           width: 30px;

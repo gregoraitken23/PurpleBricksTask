@@ -83,9 +83,9 @@ const TaskManager: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputText = e.target.value;
     setNewTaskText(inputText);
-    setButtonActive(inputText.trim() !== ''); // Update buttonActive based on trimmed input text
+    setButtonActive(inputText.trim() !== ""); // Update buttonActive based on trimmed input text
   };
-  
+
   const completeTask = (taskId: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -99,9 +99,9 @@ const TaskManager: React.FC = () => {
   return (
     <div className="page">
       <div className="taskManager">
-        <h1>Get Stuff Done</h1>
+        <h1>Task Manager</h1>
         <div className="taskManager-input">
-        <button
+          <button
             className={`button-add  ${openTitle ? "open" : ""}`}
             aria-label="Open Title"
             onClick={openInput}
@@ -126,7 +126,6 @@ const TaskManager: React.FC = () => {
               </button>
             </>
           )}
-          
         </div>
         <TaskList
           tasks={tasks}
