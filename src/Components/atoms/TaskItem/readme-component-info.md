@@ -1,6 +1,7 @@
 Interfaces:
 
 Task: Describes the structure of a task with properties id, text, and completed.
+
 TaskItemProps: Specifies the props expected by the TaskItem component, including a task (task), and three callback functions (onEdit, onComplete, onDelete).
 
 Functional Component:
@@ -18,6 +19,7 @@ When editing, shows an input field and a save (edit) button.
 Icon Usage:
 
 Utilizes various SVG icons for the complete, edit, delete, and save actions.
+
 Event Handlers:
 
 onComplete: Marks a task as complete.
