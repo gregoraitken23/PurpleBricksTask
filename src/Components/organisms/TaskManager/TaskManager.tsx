@@ -111,6 +111,7 @@ const TaskManager: React.FC = () => {
           {openTitle && (
             <>
               <input
+                data-testid="edit-input"
                 type="text"
                 placeholder="Type a new task here..."
                 value={newTaskText}

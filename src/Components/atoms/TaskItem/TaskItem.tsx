@@ -43,17 +43,17 @@ const TaskItem = ({ task, onEdit, onComplete, onDelete }: TaskItemProps) => {
     <li className={`task-item ${task.completed ? "completed" : ""}`}>
       {!editing ? (
         <>
-          <button className="complete-button" onClick={onComplete}>
+          <button className="complete-button" data-testid="complete-button" onClick={onComplete}>
             {task.completed ? <Complete /> : <Incomplete />}
           </button>
-          <div onClick={onComplete} className="task-text">
+          <div className="task-text">
             <strong>{task.text}</strong>
           </div>
           <div className="task-actions">
-            <button className="edit-button" onClick={() => setEditing(true)}>
+            <button className="edit-button" data-testid="edit-button" onClick={() => setEditing(true)}>
               <Edit />
             </button>
-            <button className="delete-button" onClick={onDelete}>
+            <button className="delete-button" data-testid="delete-button" onClick={onDelete}>
               <Delete />
             </button>
           </div>
