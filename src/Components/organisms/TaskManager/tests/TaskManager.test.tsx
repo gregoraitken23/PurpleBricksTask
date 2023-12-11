@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import TaskManager from "./TaskManager";
+import TaskManager from "../TaskManager";
 
 test("renders learn react link", () => {
   render(<TaskManager />);
