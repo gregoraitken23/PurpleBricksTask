@@ -1,10 +1,8 @@
-# Getting Started with Create React App
+This was fun to work on.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+in the absence of a wiki I have created readMe files within component containing info on what the compoent is and how it is made up.
 
-## Available Scripts
-
-In the project directory, you can run:
+let me know if you have any issues
 
 ### `npm start`
 
