@@ -4,7 +4,7 @@ in the absence of a wiki I have created readMe files within component containing
 
 This small app allows user to create, edit, complete and delete tasks in a responsive and modularily created app. Due to the simplicity I have I not used Redux but instead used reacts built in state management..
 
-the components have been seperated into Atoms, Molecules & Organisms based on the their function and implementation.
+The components have been seperated into Atoms, Molecules & Organisms based on the their function and implementation.
 
 ![image](https://github.com/gregoraitken23/PurpleBricksTask/assets/80417382/cd77b08c-facb-4806-ad08-4df75531283e)
 
